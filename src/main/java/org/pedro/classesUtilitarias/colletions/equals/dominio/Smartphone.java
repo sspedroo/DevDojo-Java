@@ -20,12 +20,17 @@ public class Smartphone {
     //Consistente: x.equals(x) sempre retorna true se x for diferente de null
     //para x diferente de null, x.equals(null) retrona false
 
+
     @Override
-    public boolean equals(Object obj){
-        if(obj == null) return false;
-        if(this == obj) return true;
-        if(this.getClass() != obj.getClass()) return false;
-        Smartphone smartphone = (Smartphone) obj;
-        return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Smartphone that = (Smartphone) o;
+        return Objects.equals(serialNumber, that.serialNumber) && Objects.equals(marca, that.marca);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(serialNumber, marca);
     }
 }

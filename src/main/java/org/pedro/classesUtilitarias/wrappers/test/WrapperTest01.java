@@ -1,5 +1,7 @@
 package org.pedro.classesUtilitarias.wrappers.test;
 
+import java.util.Scanner;
+
 /**
  * Wrappers oferece alguns metodos pois é um objeto.
  * Utilizar wrappers somente em situações que for necessario
@@ -31,3 +33,5 @@ public class WrapperTest01 {
         int i = intW; //unboxing
     }
 }
+
+
